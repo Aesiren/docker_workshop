@@ -6,6 +6,7 @@ const port = 8080;
 const knex = require('knex')(require('./knexfile.js')['development']);
 
 app.use(cors());
+app.use(express.json());
 
 (async () => {
   try {
@@ -38,6 +39,18 @@ app.get('/', function (req, res) {
       })
     )
   // res.status(200).json({ message: 'My api is up and running' });
+})
+
+app.post('/add', async (req, res) => {
+  console.log('Received POST request: ', req.body.authors)
+  try {
+    await knex('authors').insert(req.body.authors);
+    res.status(200).json({ message: 'Saved author info' });
+    console.log('New Author Saved');
+  } catch (err) {
+    console.error('Uh Oh...', err);
+    res.status(500).json({ error: 'Failed to save Author' });
+  }
 })
 
 // app.listen(port, () => {
