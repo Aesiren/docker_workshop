@@ -1,9 +1,11 @@
-var express = require('express');
+const express = require('express');
+const cors = require('cors');
+const app = express();
 
-var app = express();
-
-var port = 8080;
+const port = 8080;
 const knex = require('knex')(require('./knexfile.js')['development']);
+
+app.use(cors());
 
 (async () => {
   try {
@@ -23,10 +25,19 @@ const knex = require('knex')(require('./knexfile.js')['development']);
     // process.exit(1);
   }
 
-})
+})();
 
 app.get('/', function (req, res) {
-  res.status(200).json({ message: 'My api is up and running' });
+  knex('authors')
+    .select('*')
+    .then(data => res.status(200).json(data))
+    .catch(err =>
+      res.status(404).json({
+        message:
+          'No data to display'
+      })
+    )
+  // res.status(200).json({ message: 'My api is up and running' });
 })
 
 // app.listen(port, () => {
