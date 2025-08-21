@@ -13,8 +13,8 @@ app.use(express.json());
     console.log('Running migrations')
     await knex.migrate.latest();
 
-    console.log('Seeding database')
-    await knex.seed.run();
+    // console.log('Seeding database')
+    // await knex.seed.run();
 
     console.log('Database ready')
 
