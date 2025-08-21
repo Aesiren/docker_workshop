@@ -4,7 +4,9 @@ var app = express();
 
 var port = 8080;
 
-app.get('/', function (res, req) {
+
+
+app.get('/', function (req, res) {
   res.status(200).json({ message: 'My api is up and running' });
 })
 

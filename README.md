@@ -18,9 +18,9 @@ Containerize a React Application
    [X] Run the Docker Image as a Docker Container
         GOAL: Make sure you can connect to that application on your localhost
         AFTER GOAL: remove the container and application.
-   [] Use Docker Compose to execute your ui application.
-   [] Create a service inside your docker-compose file at the root of the file system.
-   [] From the command line at the root of your application run: docker-compose up
+   [X] Use Docker Compose to execute your ui application.
+   [X] Create a service inside your docker-compose file at the root of the file system.
+   [X] From the command line at the root of your application run: docker-compose up
         GOAL: Make sure you can STILL connect to your application on localhost - but using ONLY the docker-compose command
         AFTER GOAL: use docker-compose down, verify that you can no longer access your application.
 
@@ -32,12 +32,12 @@ Containerize an Express Application
   [x]  Set up one root route to ensure the application works
     ‘/’ route is sufficient enough, when you hit your root route - send a response with something like “My API is up and running Yo!”
   [x]  Create a Dockerfile for the Express API
-  []  Build the Docker image for the API
-  []  Run the Docker image as a Docker Container.
+  [X]  Build the Docker image for the API
+  [X]  Run the Docker image as a Docker Container.
         GOAL: Make sure you can connect to your API at localhost and you see your response string rendered to the application.
-  []  Use Docker Compose to execute your api.
-  []  Add a service to your docker-compose.yaml file at the root of your system.
-  []  From the command line at the root of your application run: docker-compose up
+  [X]  Use Docker Compose to execute your api.
+  [X]  Add a service to your docker-compose.yaml file at the root of your system.
+  [X]  From the command line at the root of your application run: docker-compose up
         GOAL: Make sure you can STILL connect to your CRA application on localhost, AND that you can connect to your API - but using ONLY the docker-compose command
         AFTER GOAL: use docker-compose down, verify that you can no longer access your CRA or your API.
 
